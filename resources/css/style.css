@@ -7,22 +7,34 @@ body {
 
 h1 {
     color: white;
-    font-size: 36px;
+    font-size: 4rem;
     text-align: center;
 }
 
+.container{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid white;
+    overflow: hidden;
+
+}
+
 .image-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    text-align: center;
+    /*display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 60%;
-    margin: auto;
+    width: 100%;
+    margin: auto;*/
     margin-bottom: 50px;
 }
 
 .media {
-    width: 30%;
-    height: 30%;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,12 +84,16 @@ img {
     opacity: 0;
     transition: all ease-in-out 0.5s;
     /*background-color: blue;*/
-    width: 100%;
+    width: 80%;
     padding-bottom: 5px;
 }
 
+.image-details p{
+    margin-bottom: 2rem;
+}
+
 .media:hover .image-details {
-    top: 30%;
+    top: 40%;
     opacity: 1;
 
 }
@@ -96,8 +112,9 @@ img {
     border: 3px transparent solid;
     border-radius: 5px;
     color: white;
-    padding: 15px 15px;
-    width: 8rem;
+    padding: 20px 15px;
+    width: 12rem;
+    height: 3.5rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
