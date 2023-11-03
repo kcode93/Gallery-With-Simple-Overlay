@@ -1,137 +1,265 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap");
 
-:root{
-    --font-family: 'Jost', sans-serif;
-    --body-color: #212121;
-    --container-width: 80%;
-
+:root {
+	--font-family: "Jost", sans-serif;
+	--body-color: #212121;
+	--container-width: 80%;
 }
 
-
 body {
-    font-family: var(--font-family);
-    background-color: var(--body-color);
+	font-family: var(--font-family);
+	background-color: var(--body-color);
 }
 
 h1 {
-    color: white;
-    font-size: 4rem;
-    text-align: center;
+	color: white;
+	font-size: 4rem;
+	text-align: center;
 }
 
-.container{
-    width: var(--container-width);
-    margin: 2rem auto;
-    border: 1px solid white;
-    overflow: hidden;
-
+.container {
+	width: var(--container-width);
+	margin: 2rem auto;
+	border: 1px solid white;
+	overflow: hidden;
 }
 
 .grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1.5rem;
-    text-align: center;
-    margin: 1.5rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+	text-align: center;
+	margin: 1.5rem;
 }
 
 .grid-cell {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
 }
 
 .grid-cell:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 3;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	opacity: 0;
+	transition: all ease-in-out 0.5s;
 }
 
 .grid-cell:hover .overlay {
-    opacity: 1;
+	opacity: 1;
 }
 
 img {
-    width: 100%;
-    z-index: -1;
-    margin: auto;
-    transform: scale(1);
-    transition: all ease-in-out 0.5s;
+	width: 100%;
+	z-index: -1;
+	margin: auto;
+	transform: scale(1);
+	transition: all ease-in-out 0.5s;
 }
 
 .grid-cell:hover img {
-    transform: scale(1.1);
-    filter: blur(2px);
+	transform: scale(1.1);
+	filter: blur(2px);
 }
 
 .image-details {
-    text-align: center;
-    color: white;
-    font-size: 20px;
-    z-index: 4;
-    position: absolute;
-    top: 100%;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-    /*background-color: blue;*/
-    width: 80%;
-    padding-bottom: 5px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	z-index: 4;
+	position: absolute;
+	top: 100%;
+	opacity: 0;
+	transition: all ease-in-out 0.5s;
+	width: 100%;
+	padding-bottom: 5px;
 }
 
-.image-details p{
-    margin-bottom: 2rem;
-    font-weight: bold;
+.image-details p {
+	margin-bottom: 2rem;
+	font-weight: bold;
 }
 
 .grid-cell:hover .image-details {
-    top: 40%;
-    opacity: 1;
-
+	top: 40%;
+	opacity: 1;
 }
 
-.flex {
-    display: flex;
-    /*flex-direction: column;*/
-    justify-content: space-around;
-    text-align: center;
-    align-items: center;
+.inner-container {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	width: 100%;
 }
 
 .btn {
-    background-color: #333;
-    /* Green */
-    border: 3px transparent solid;
-    border-radius: 5px;
-    color: white;
-    padding: 20px 15px;
-    width: 12rem;
-    height: 4rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.2rem;
-    transition: all 0.8s;
+	background-color: #333;
+	border: 3px transparent solid;
+	border-radius: 5px;
+	color: white;
+	padding: 15px 15px;
+	width: 12rem;
+	height: 4rem;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.2rem;
+	transition: all 0.8s;
+	margin: 0 1rem;
 }
 
 .btn:hover {
-    border: 3px solid #fff;
+	border: 3px solid #fff;
 }
 
-@media only screen and (max-width: 900px) {
-    .grid-cell {
-        width: 70%;
-        height: 70%;
-    }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		overflow: hidden;
+		margin: 1rem 0;
+		border: none;
+	}
+
+	.grid-gallery {
+		grid-template-columns: 1fr;
+	}
+
+	.image-details {
+		font-size: 1.4rem;
+	}
+
+	.btn {
+		font-size: 1.2rem;
+		width: 12rem;
+		height: 4rem;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		overflow: hidden;
+		margin: 1rem 0;
+		border: none;
+	}
+
+	.grid-gallery {
+		grid-template-columns: 1fr;
+	}
+
+	.image-details {
+		font-size: 1.4rem;
+	}
+
+	.btn {
+		font-size: 1.2rem;
+		width: 12rem;
+		height: 4rem;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		overflow: hidden;
+		margin: 1rem 0;
+		border: none;
+	}
+
+	.grid-gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.image-details {
+		font-size: 1.1rem;
+	}
+
+	.btn {
+		font-size: 0.8rem;
+		width: 8rem;
+		height: 3rem;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		overflow: hidden;
+		margin: 1rem 0;
+		border: none;
+	}
+
+	.grid-gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.image-details {
+		font-size: 1.4rem;
+	}
+
+	.btn {
+		font-size: 1.2rem;
+		width: 12rem;
+		height: 4rem;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		overflow: hidden;
+		margin: 1rem 0;
+		border: none;
+	}
+
+	.grid-gallery {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.image-details {
+		font-size: 1.4rem;
+	}
+
+	.btn {
+		font-size: 1.2rem;
+		width: 12rem;
+		height: 4rem;
+	}
 }
