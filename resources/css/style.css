@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap');
 
 :root {
-	--font-family: "Jost", sans-serif;
+	--font-family: 'Jost', sans-serif;
 	--body-color: #212121;
 	--container-width: 80%;
+	--border-color: #fff;
 }
 
 body {
@@ -20,7 +21,7 @@ h1 {
 .container {
 	width: var(--container-width);
 	margin: 2rem auto;
-	border: 1px solid white;
+	/*border: 1px solid var(--border-color);*/
 	overflow: hidden;
 }
 
@@ -254,12 +255,87 @@ img {
 	}
 
 	.image-details {
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 	}
 
 	.btn {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		font-size: 1rem;
+		width: 9.5rem;
+		height: 4.5rem;
+	}
+
+	.btn i {
+		margin-bottom: 0.4rem;
+	}
+}
+
+/* Extra large X2 devices (large laptops and desktops, 1400px and up) */
+@media only screen and (min-width: 1400px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 100%;
+		overflow: hidden;
+		margin: 1rem 0;
+		border: none;
+	}
+
+	.grid-gallery {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.image-details {
+		font-size: 1.5rem;
+	}
+
+	.btn {
+		flex-direction: column;
 		font-size: 1.2rem;
 		width: 12rem;
 		height: 4rem;
+	}
+
+	.btn i {
+		margin-bottom: 0.5rem;
+	}
+}
+
+/* Extra large X3 devices (large laptops and desktops, 2000px and up) */
+@media only screen and (min-width: 2000px) {
+	h1 {
+		margin-top: 1rem;
+	}
+
+	.container {
+		width: 80%;
+		overflow: hidden;
+		margin: 1rem auto;
+	}
+
+	.grid-gallery {
+		margin: 0 auto;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.image-details {
+		font-size: 1.5rem;
+	}
+
+	.btn {
+		flex-direction: column;
+		font-size: 1.2rem;
+		width: 12rem;
+		height: 4rem;
+	}
+
+	.btn i {
+		margin-bottom: 0.5rem;
 	}
 }
